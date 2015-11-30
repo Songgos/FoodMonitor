@@ -1,3 +1,3 @@
 class ComponentType < ActiveRecord::Base
-  belongs_to :component_types
+  has_many :components
 end

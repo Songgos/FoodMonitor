@@ -5,6 +5,8 @@ class CreateFoods < ActiveRecord::Migration
       t.text :description
       t.text :properties
 
+      
+
       t.timestamps null: false
     end
   end

@@ -3,8 +3,10 @@ class CreateComponents < ActiveRecord::Migration
     create_table :components do |t|
       t.string :name
 
+      t.belongs_to :component_types
 
       t.timestamps null: false
     end
+
   end
 end
