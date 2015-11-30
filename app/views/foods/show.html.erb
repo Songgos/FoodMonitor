@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @food.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @food.description %>
+</p>
+
+<p>
+  <strong>Properties:</strong>
+  <%= @food.properties %>
+</p>
+
+<p>
+  <strong>Vitamins:</strong>
+  <%= @food.vitamins %>
+</p>
+
+<p>
+  <strong>Carbs:</strong>
+  <%= @food.carbs %>
+</p>
+
+<p>
+  <strong>Fats:</strong>
+  <%= @food.fats %>
+</p>
+
+<p>
+  <strong>Minerals:</strong>
+  <%= @food.minerals %>
+</p>
+
+<p>
+  <strong>Proteins:</strong>
+  <%= @food.proteins %>
+</p>
+
+<%= link_to 'Edit', edit_food_path(@food) %> |
+<%= link_to 'Back', foods_path %>
