@@ -26,30 +26,19 @@
   <div class="field">
     <ul>
     <%= f.label :vitamins %><br>
-    <%= @food.vitamins.each do |vitamin| %>
+    <% @components_all.each do |component| %>
     <li>
-    <%= f.check_box vitamin %>
-    <%= f.label vitamin %>
+    <%= 
+    check_box_tag component.name, 'yes', 
+        (@components_marked.include? component)
+    %>
+    <%= component.name %>
+    
     </li>
     <% end %>
     </ul>
   </div>
-  <div class="field">
-    <%= f.label :carbs %><br>
-    <%= f.check_box :carbs%>
-  </div>
-  <div class="field">
-    <%= f.label :fats %><br>
-    <%= f.check_box :fats%>
-  </div>
-  <div class="field">
-    <%= f.label :minerals %><br>
-    <%= f.check_box :minerals%>
-  </div>
-  <div class="field">
-    <%= f.label :proteins %><br>
-    <%= f.check_box :proteins%>
-  </div>
+ 
   <div class="actions">
     <%= f.submit %>
   </div>
