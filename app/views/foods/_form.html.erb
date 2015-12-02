@@ -24,19 +24,34 @@
     <%= f.text_area :properties %>
   </div>
   <div class="field">
-    <ul>
-    <%= f.label :vitamins %><br>
-    <% @components_all.each do |component| %>
-    <li>
-    <%= 
-    check_box_tag component.name, 'yes', 
-        (@components_marked.include? component)
-    %>
-    <%= component.name %>
     
-    </li>
+    <table>
+    <tr>
+    <% @components_all.keys.each do |component_type_name| %>
+    
+    <th>
+    <%= f.label component_type_name %><br>
+    </th>
+
     <% end %>
-    </ul>
+    </tr>
+    <% @components_all.keys.each do |component_type_name| %>
+      <tr>
+      <% @components_all[component_type_name].each do |component| %>
+    
+      <td>
+      <%= 
+        check_box_tag component.name, 'yes', 
+            (@components_marked.include? component)
+      %>
+      <%= component.name %>
+    </td>
+      
+      
+      <% end %>
+      </tr>  
+    <% end %>
+  </table>
   </div>
  
   <div class="actions">
