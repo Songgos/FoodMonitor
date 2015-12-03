@@ -27,22 +27,21 @@
     
     <table>
     <tr>
-    <% @components_all.keys.each do |component_type_name| %>
+    <% @components_all.keys.each do |ctname| %>
     
     <th>
-    <%= f.label component_type_name %><br>
+    <%= f.label ctname %><br>
     </th>
 
     <% end %>
     </tr>
-    <% @components_all.keys.each do |component_type_name| %>
+    <% @components_all.keys.each do |ctname| %>
       <tr>
-      <% @components_all[component_type_name].each do |component| %>
+      <% @components_all[ctname].each do |component| %>
     
       <td>
       <%= 
-        check_box_tag component.name, 'yes', 
-            (@components_marked.include? component)
+        check_box_tag component.name, 'yes', (@product_components[ctname].include? component)
       %>
       <%= component.name %>
     </td>
