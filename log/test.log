@@ -1,0 +1,73 @@
+  [1m[36m (1871.2ms)[0m  [1mDROP DATABASE IF EXISTS `FoodMonitor_test`[0m
+  [1m[35m (2660.8ms)[0m  CREATE DATABASE `FoodMonitor_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`
+  [1m[36m (2860.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1214.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateFoods (20151130005621)
+  [1m[35m (194.4ms)[0m  CREATE TABLE `foods` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `properties` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (147.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151130005621')
+  [1m[36m (22.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFoodsData (20151130030829)
+  [1m[35m (29.3ms)[0m  CREATE TABLE `foods_data` (`id` int(11) auto_increment PRIMARY KEY, `percentage` decimal, `foods_id` int(11), `components_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151130030829')
+  [1m[36m (5.3ms)[0m  [1mCOMMIT[0m
+Migrating to CreateComponents (20151130031429)
+  [1m[35m (90.2ms)[0m  CREATE TABLE `components` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `component_types_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (22.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151130031429')
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateComponentTypes (20151130031612)
+  [1m[35m (14.3ms)[0m  CREATE TABLE `component_types` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (47.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151130031612')
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (1.0ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (163.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'FoodMonitor_test'
+  AND fk.table_name = 'component_types'
+[0m
+  [1m[35m (0.9ms)[0m  SHOW CREATE TABLE `component_types`
+  [1m[36m (1.4ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'FoodMonitor_test'
+  AND fk.table_name = 'components'
+[0m
+  [1m[35m (1.0ms)[0m  SHOW CREATE TABLE `components`
+  [1m[36m (3.9ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'FoodMonitor_test'
+  AND fk.table_name = 'foods'
+[0m
+  [1m[35m (1.9ms)[0m  SHOW CREATE TABLE `foods`
+  [1m[36m (2.1ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'FoodMonitor_test'
+  AND fk.table_name = 'foods_data'
+[0m
+  [1m[35m (1.0ms)[0m  SHOW CREATE TABLE `foods_data`
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (12.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
