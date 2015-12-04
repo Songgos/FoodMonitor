@@ -1,6 +1,5 @@
 class FoodsController < ApplicationController
   before_action :set_properties
-  before_action :product_components, only: [:set_properties]
   before_action :set_food, only: [:show, :edit, :update, :destroy]
 
   # GET /foods
@@ -16,7 +15,6 @@ class FoodsController < ApplicationController
 
   # GET /foods/new
   def new
-    @food = Food.new
   end
 
   # GET /foods/1/edit
@@ -79,7 +77,6 @@ class FoodsController < ApplicationController
     ComponentType.all.each do |ct|
       @components_all[ct.name] = Component.where(component_types_id: ct.id)
     end
-
     product_components if params[:id]
   end
 

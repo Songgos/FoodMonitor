@@ -14,31 +14,30 @@
   <strong>Properties:</strong>
   <%= @food.properties %>
 </p>
-
-<p>
-  <strong>Vitamins:</strong>
-  <%= @food.vitamins %>
-</p>
-
-<p>
-  <strong>Carbs:</strong>
-  <%= @food.carbs %>
-</p>
-
-<p>
-  <strong>Fats:</strong>
-  <%= @food.fats %>
-</p>
-
-<p>
-  <strong>Minerals:</strong>
-  <%= @food.minerals %>
-</p>
-
-<p>
-  <strong>Proteins:</strong>
-  <%= @food.proteins %>
-</p>
+<table>
+  <tr>
+  <% @components_all.keys.each do |ctname| %>    
+    <th>
+    <%= ctname %><br>
+    </th>
+  <% end %>
+  </tr>
+  <% @components_all.keys.each do |ctname| %>
+  <tr>
+    <% @components_all[ctname].each do |component| %>
+    <td>
+      <% if params[:id] %>
+        <% if (@product_components[ctname].include? component) %>
+          <%= component.name %>
+        <% else %>
+      
+        <% end %>
+      <% end %>
+    </td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
 
 <%= link_to 'Edit', edit_food_path(@food) %> |
 <%= link_to 'Back', foods_path %>

@@ -10,7 +10,6 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -23,36 +22,35 @@
     <%= f.label :properties %><br>
     <%= f.text_area :properties %>
   </div>
-  <div class="field">
-    
+  <div class="field">    
     <table>
     <tr>
-    <% @components_all.keys.each do |ctname| %>
-    
+    <% @components_all.keys.each do |ctname| %>    
     <th>
     <%= f.label ctname %><br>
     </th>
-
     <% end %>
     </tr>
     <% @components_all.keys.each do |ctname| %>
       <tr>
-      <% @components_all[ctname].each do |component| %>
-    
+      <% @components_all[ctname].each do |component| %>    
       <td>
-      <%= 
-        check_box_tag component.name, 'yes', (@product_components[ctname].include? component)
-      %>
+        <% if params[:id] %>
+        <%= 
+          check_box_tag component.name, 'yes', (@product_components[ctname].include? component)
+        %>
+        <% else %>
+        <%= 
+          check_box_tag component.name, 'yes'
+        %>
+        <% end %>
       <%= component.name %>
     </td>
-      
-      
-      <% end %>
+    <% end %>
       </tr>  
     <% end %>
   </table>
   </div>
- 
   <div class="actions">
     <%= f.submit %>
   </div>
