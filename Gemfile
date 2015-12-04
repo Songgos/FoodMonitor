@@ -22,6 +22,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# Change the CLI interface
+gem 'pry-rails'
+# Add bootstrap for rails
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -35,7 +39,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 2.0'
+  gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
 end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views

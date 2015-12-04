@@ -1,0 +1,58 @@
+<%= form_for(@food) do |f| %>
+
+  <% if @food.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+      <% @food.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :properties %><br>
+    <%= f.text_area :properties %>
+  </div>
+  <div class="field">    
+    <table>
+    <tr>
+    <% @components_all.keys.each do |ctname| %>    
+    <th>
+    <%= f.label ctname %><br>
+    </th>
+    <% end %>
+    </tr>
+    <% @components_all.keys.each do |ctname| %>
+      <tr>
+      <% @components_all[ctname].each do |component| %>    
+      <td>
+        <% if params[:id] %>
+        <%= 
+          check_box_tag component.name, 'yes', (@product_components[ctname].include? component)
+        %>
+        <% else %>
+        <%= 
+          check_box_tag component.name, 'yes'
+        %>
+        <% end %>
+      <%= component.name %>
+    </td>
+    <% end %>
+      </tr>  
+    <% end %>
+  </table>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

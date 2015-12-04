@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @food.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @food.description %>
+</p>
+
+<p>
+  <strong>Properties:</strong>
+  <%= @food.properties %>
+</p>
+<table>
+  <tr>
+  <% @components_all.keys.each do |ctname| %>    
+    <th>
+    <%= ctname %><br>
+    </th>
+  <% end %>
+  </tr>
+  <% @components_all.keys.each do |ctname| %>
+  <tr>
+    <% @components_all[ctname].each do |component| %>
+    <td>
+      <% if params[:id] %>
+        <% if (@product_components[ctname].include? component) %>
+          <%= component.name %>
+        <% else %>
+      
+        <% end %>
+      <% end %>
+    </td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Edit', edit_food_path(@food) %> |
+<%= link_to 'Back', foods_path %>
