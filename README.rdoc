@@ -1,27 +1,44 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+{<img src="https://travis-ci.org/Songgos/FoodMonitor.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/Songgos/FoodMonitor]
 
-Things you may want to cover:
+If you want to contribute to this project, these are some tools we use for the
+development process
 
-* Ruby version
+* Ruby (2.2.*)
 
-* System dependencies
+* Rails (4.2.4)
 
-* Configuration
+* MySQL (5.5)
 
-* Database creation
+* Vagrant
 
-* Database initialization
+Just follow these steps:
 
-* How to run the test suite
+* You can download the ruby stack offered by bitnami (www.bitnami.com) and
+    install ruby on your system, but we hardly recommend you not to do so. In 
+    our humble opinion it is easier to develop agains a virtual machine.
 
-* Services (job queues, cache servers, search engines, etc.)
+* We use vagrant for virtual boxes management, it's use is pretty straightforward.
+    www.vagrantup.com
 
-* Deployment instructions
+* We use mysql(5.5), you should define these environment variables in your
+    development environment:
+        MYSQL_USER:
+        MYSQL_PASSWORD
+    we use the values stored in those variables to make queries to the database.
+    You can use any user or password in those variables.
 
-* ...
+* After the previous steps are all set, you can run these commands to start a 
+    basic server with rails:
+
+    ** bundle install
+    ** rake db:create
+    ** rake db:migrate
+    ** rake db:seed    
+
+* Since rails has its own tools for Test Driven Develópment (TDD), we use them
+    extensively
 
 
 Please feel free to use a different markup language if you do not plan to run
