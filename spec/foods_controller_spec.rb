@@ -15,7 +15,6 @@ describe FoodsController do
     end
     it "should show the results page" do
     end
-    it "should"
 
   end
 
