@@ -1,10 +1,8 @@
 require "spec_helper"
 
 describe FoodsController do
-  @fc = FoodsController
   describe "Create Food" do
     it "should show the food creation form" do
-      @fc.
     end
     it "should save the information filled in the form" do
     end

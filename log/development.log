@@ -7541,3 +7541,223 @@ Processing by FoodsController#index as HTML
   [1m[35mFood Load (7.9ms)[0m  SELECT `foods`.* FROM `foods`
   Rendered foods/index.html.erb within layouts/application (21.3ms)
 Completed 200 OK in 2390ms (Views: 2363.6ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/foods" for 10.0.2.2 at 2015-12-04 19:35:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by FoodsController#index as HTML
+  [1m[35mComponentType Load (1.2ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFood Load (1.3ms)[0m  [1mSELECT `foods`.* FROM `foods`[0m
+  Rendered foods/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 3471ms (Views: 3148.2ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/foods/1" for 10.0.2.2 at 2015-12-04 19:35:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mComponentType Load (0.9ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFoodsDatum Load (1.2ms)[0m  [1mSELECT `foods_data`.* FROM `foods_data` WHERE `foods_data`.`foods_id` = 1[0m
+  [1m[35mComponent Load (1.5ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1
+  [1m[36mComponentType Load (1.3ms)[0m  [1mSELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComponent Load (0.9ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFood Load (0.9ms)[0m  SELECT  `foods`.* FROM `foods` WHERE `foods`.`id` = 1 LIMIT 1
+  [1m[36mComponent Load (1.4ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 1[0m
+  [1m[35mComponent Load (1.0ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 2
+  [1m[36mComponent Load (1.7ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 3[0m
+  [1m[35mComponent Load (1.0ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 4
+  [1m[36mComponent Load (1.2ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 5[0m
+  Rendered foods/show.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 1006ms (Views: 864.2ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/foods/1/edit" for 10.0.2.2 at 2015-12-04 19:35:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mComponentType Load (0.9ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFoodsDatum Load (1.0ms)[0m  [1mSELECT `foods_data`.* FROM `foods_data` WHERE `foods_data`.`foods_id` = 1[0m
+  [1m[35mComponent Load (0.8ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1
+  [1m[36mComponentType Load (0.8ms)[0m  [1mSELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComponent Load (0.7ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFood Load (0.7ms)[0m  SELECT  `foods`.* FROM `foods` WHERE `foods`.`id` = 1 LIMIT 1
+  [1m[36mComponent Load (0.8ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 1[0m
+  [1m[35mComponent Load (0.8ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 2
+  [1m[36mComponent Load (0.7ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 3[0m
+  [1m[35mComponent Load (0.9ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 4
+  [1m[36mComponent Load (0.7ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 5[0m
+  Rendered foods/_form.html.erb (279.0ms)
+  Rendered foods/edit.html.erb within layouts/application (386.5ms)
+Completed 200 OK in 1294ms (Views: 1249.9ms | ActiveRecord: 9.0ms)
+
+
+Started PATCH "/foods/1" for 10.0.2.2 at 2015-12-04 19:37:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pHZ3inno4Z9m3iO0tkwsCnz/XGzeu9MuwCDjW0Ciktzk9sGMBHTYslodRSQNVdf6CD+YAFoNYPw1NruX4vqd+g==", "food"=>{"name"=>"Papa", "description"=>"Tubérculo ancestral incaico.", "properties"=>"Cura el hambre"}, "B1"=>"yes", "B2"=>"yes", "commit"=>"Update Food", "id"=>"1"}
+  [1m[35mComponentType Load (1.0ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFoodsDatum Load (0.9ms)[0m  [1mSELECT `foods_data`.* FROM `foods_data` WHERE `foods_data`.`foods_id` = 1[0m
+  [1m[35mComponent Load (0.7ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1
+  [1m[36mComponentType Load (0.9ms)[0m  [1mSELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComponent Load (0.8ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFood Load (0.9ms)[0m  SELECT  `foods`.* FROM `foods` WHERE `foods`.`id` = 1 LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (16.7ms)[0m  UPDATE `foods` SET `description` = 'Tubérculo ancestral incaico.', `updated_at` = '2015-12-04 19:37:41' WHERE `foods`.`id` = 1
+  [1m[36m (18.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/foods/1
+Completed 302 Found in 95ms (ActiveRecord: 41.4ms)
+
+
+Started GET "/foods/1" for 10.0.2.2 at 2015-12-04 19:37:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mComponentType Load (0.8ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFoodsDatum Load (0.8ms)[0m  [1mSELECT `foods_data`.* FROM `foods_data` WHERE `foods_data`.`foods_id` = 1[0m
+  [1m[35mComponent Load (0.7ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1
+  [1m[36mComponentType Load (0.6ms)[0m  [1mSELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComponent Load (0.9ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFood Load (1.3ms)[0m  SELECT  `foods`.* FROM `foods` WHERE `foods`.`id` = 1 LIMIT 1
+  [1m[36mComponent Load (1.0ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 1[0m
+  [1m[35mComponent Load (0.9ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 2
+  [1m[36mComponent Load (0.8ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 3[0m
+  [1m[35mComponent Load (0.9ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 4
+  [1m[36mComponent Load (0.7ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 5[0m
+  Rendered foods/show.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 903ms (Views: 861.6ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/foods" for 10.0.2.2 at 2015-12-04 19:37:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#index as HTML
+  [1m[35mComponentType Load (0.8ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFood Load (1.4ms)[0m  [1mSELECT `foods`.* FROM `foods`[0m
+  Rendered foods/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 842ms (Views: 835.3ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/foods/4" for 10.0.2.2 at 2015-12-04 19:37:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fTQZx765YLr1kCJ6d5X+D9gUADiXfw2ukc1Uc6jNzJY9tK/BwyVZl8lTROrMjAX/rNTEVBPJvnxk2wy/CpXDsA==", "id"=>"4"}
+  [1m[35mComponentType Load (0.8ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFoodsDatum Load (1.0ms)[0m  [1mSELECT `foods_data`.* FROM `foods_data` WHERE `foods_data`.`foods_id` = 4[0m
+  [1m[35mFood Load (1.0ms)[0m  SELECT  `foods`.* FROM `foods` WHERE `foods`.`id` = 4 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM `foods` WHERE `foods`.`id` = 4
+  [1m[36m (134.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/foods
+Completed 302 Found in 160ms (ActiveRecord: 139.0ms)
+
+
+Started GET "/foods" for 10.0.2.2 at 2015-12-04 19:37:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#index as HTML
+  [1m[35mComponentType Load (1.1ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFood Load (1.4ms)[0m  [1mSELECT `foods`.* FROM `foods`[0m
+  Rendered foods/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 838ms (Views: 830.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-12-04 19:41:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/vagrant/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foods/" for 10.0.2.2 at 2015-12-04 20:13:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by FoodsController#index as HTML
+  [1m[35mComponentType Load (1.5ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFood Load (2.1ms)[0m  [1mSELECT `foods`.* FROM `foods`[0m
+  Rendered foods/index.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 2245ms (Views: 1942.3ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/foods/1/edit" for 10.0.2.2 at 2015-12-04 20:14:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mComponentType Load (0.9ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFoodsDatum Load (1.6ms)[0m  [1mSELECT `foods_data`.* FROM `foods_data` WHERE `foods_data`.`foods_id` = 1[0m
+  [1m[35mComponent Load (1.8ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1
+  [1m[36mComponentType Load (1.5ms)[0m  [1mSELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComponent Load (1.1ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFood Load (1.2ms)[0m  SELECT  `foods`.* FROM `foods` WHERE `foods`.`id` = 1 LIMIT 1
+  [1m[36mComponent Load (1.4ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 1[0m
+  [1m[35mComponent Load (1.2ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 2
+  [1m[36mComponent Load (1.0ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 3[0m
+  [1m[35mComponent Load (0.9ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 4
+  [1m[36mComponent Load (1.0ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 5[0m
+  Rendered foods/_form.html.erb (243.6ms)
+  Rendered foods/edit.html.erb within layouts/application (338.3ms)
+Completed 200 OK in 1329ms (Views: 1167.1ms | ActiveRecord: 19.1ms)
+
+
+Started PATCH "/foods/1" for 10.0.2.2 at 2015-12-04 20:14:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LR+Bza/U3jOf4Scjv5ffTnfOlK1c6r6mg0kFIupXACQ4cnBOCoAkcqyUpI2jeqp/qNQRm6BFalnwgxNs33EAMA==", "food"=>{"name"=>"Papa", "description"=>"Tubérculo ancestral.", "properties"=>"Cura el hambre"}, "B1"=>"yes", "B2"=>"yes", "commit"=>"Update Food", "id"=>"1"}
+  [1m[35mComponentType Load (0.9ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFoodsDatum Load (0.8ms)[0m  [1mSELECT `foods_data`.* FROM `foods_data` WHERE `foods_data`.`foods_id` = 1[0m
+  [1m[35mComponent Load (0.7ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1
+  [1m[36mComponentType Load (1.0ms)[0m  [1mSELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComponent Load (0.9ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFood Load (0.7ms)[0m  SELECT  `foods`.* FROM `foods` WHERE `foods`.`id` = 1 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (12.8ms)[0m  UPDATE `foods` SET `description` = 'Tubérculo ancestral.', `updated_at` = '2015-12-04 20:14:28' WHERE `foods`.`id` = 1
+  [1m[36m (4.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/foods/1
+Completed 302 Found in 67ms (ActiveRecord: 23.2ms)
+
+
+Started GET "/foods/1" for 10.0.2.2 at 2015-12-04 20:14:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mComponentType Load (1.1ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFoodsDatum Load (0.8ms)[0m  [1mSELECT `foods_data`.* FROM `foods_data` WHERE `foods_data`.`foods_id` = 1[0m
+  [1m[35mComponent Load (0.7ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1
+  [1m[36mComponentType Load (0.7ms)[0m  [1mSELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `components`.* FROM `components` WHERE `components`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComponent Load (0.8ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `component_types`.* FROM `component_types` WHERE `component_types`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `components`.* FROM `components` WHERE `components`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mFood Load (1.2ms)[0m  SELECT  `foods`.* FROM `foods` WHERE `foods`.`id` = 1 LIMIT 1
+  [1m[36mComponent Load (1.3ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 1[0m
+  [1m[35mComponent Load (0.8ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 2
+  [1m[36mComponent Load (0.7ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 3[0m
+  [1m[35mComponent Load (1.0ms)[0m  SELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 4
+  [1m[36mComponent Load (0.7ms)[0m  [1mSELECT `components`.* FROM `components` WHERE `components`.`component_types_id` = 5[0m
+  Rendered foods/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 854ms (Views: 800.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/foods" for 10.0.2.2 at 2015-12-04 20:16:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by FoodsController#index as HTML
+  [1m[35mComponentType Load (1.0ms)[0m  SELECT `component_types`.* FROM `component_types`
+  [1m[36mFood Load (2.9ms)[0m  [1mSELECT `foods`.* FROM `foods`[0m
+  Rendered foods/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 841ms (Views: 832.1ms | ActiveRecord: 3.9ms)
