@@ -42,7 +42,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
-  gem 'rake'
 end
 
 group :test do
