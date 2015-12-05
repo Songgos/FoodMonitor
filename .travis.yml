@@ -1,3 +1,10 @@
 language: ruby
 rvm:
   - 2.2
+
+script: 
+  - bundle install
+  - bundle rake db:create
+  - bundle rake db:migrate
+  - bundle rake db:seed
+  - bundle exec rake
