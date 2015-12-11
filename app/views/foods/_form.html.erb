@@ -32,20 +32,27 @@
     </th>
     <% end %>
     </tr>
+    <% @components_all_lengths = {} %>
     <% @components_all.keys.each do |ctname| %>
+    <% @components_all_lengths[ctname] = ctname.length%>
+    <% end %>
+    <% @larger_key = @components_all_lengths.max_by{|k,v| v} %>
+    <% for component in 0..@larger_key[1] %>
       <tr>
-      <% @components_all[ctname].each do |component| %>    
+      <% @components_all.keys.each do |ctname| %>    
       <td>
-        <% if params[:id] %>
-        <%= 
-          check_box_tag component.name, 'yes', (@product_components[ctname].include? component)
-        %>
-        <% else %>
-        <%= 
-          check_box_tag component.name, 'yes'
-        %>
-        <% end %>
-      <%= component.name %>
+        <% if @components_all[ctname][component]%>
+          <% if params[:id] %>
+          <%= 
+            check_box_tag @components_all[ctname][component].name, 'yes', (@product_components[ctname][component].include? component)
+          %>
+          <% else %>
+          <%= 
+            check_box_tag @components_all[ctname][component].name, 'yes'
+          %>
+          <% end %>
+        <%= @components_all[ctname][component].name %>
+      <% end%>
     </td>
     <% end %>
       </tr>  
