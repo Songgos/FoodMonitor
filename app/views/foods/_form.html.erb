@@ -44,7 +44,7 @@
         <% if @components_all[ctname][component]%>
           <% if params[:id] %>
           <%= 
-            check_box_tag @components_all[ctname][component].name, 'yes', (@product_components[ctname][component].include? component)
+            check_box_tag @components_all[ctname][component].name, 'yes', (@product_components[ctname].include? @components_all[ctname][component])
           %>
           <% else %>
           <%= 
